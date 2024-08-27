@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class Board : MonoBehaviour
     public int height;
 
     public GameObject bgTilePrefab;
+    
+    public Gem[] gems;
+
+    public Gem[,] allGems;
 
 #endregion
 
@@ -20,6 +25,8 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
+        allGems = new Gem[width, height];
+        
         Setup();
     }
 
@@ -37,8 +44,21 @@ public class Board : MonoBehaviour
                 GameObject bgTile = Instantiate(bgTilePrefab, pos, Quaternion.identity);
                 bgTile.transform.parent = transform;
                 bgTile.name = "BG Tile - " + i + ", " + j;
+
+                int gemToUse = Random.Range(0, gems.Length);
+                
+                SpawnGem(new Vector2Int(i,j), gems[gemToUse]);
             }
         }
+    }
+
+    private void SpawnGem(Vector2Int pos, Gem gemToSpawn)
+    {
+        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y, 0), Quaternion.identity);
+        gem.transform.parent = transform;
+        gem.name = "Gem - " + pos.x + ", " + pos.y;
+        allGems[pos.x, pos.y] = gem;
+        gem.SetupGem(pos, this);
     }
 
 #endregion
