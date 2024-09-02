@@ -117,6 +117,31 @@ public class Board : MonoBehaviour
         }
     }
 
+    private IEnumerator DecreaseRowCo()
+    {
+        yield return new WaitForSeconds(.2f);
+
+        int nullCounter = 0;
+        
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allGems[i,j] == null)
+                {
+                    nullCounter++;
+                }
+                else if(nullCounter > 0)
+                {
+                    allGems[i, j].posIndex.y -= nullCounter;
+                    allGems[i, j - nullCounter] = allGems[i, j];
+                    allGems[i, j] = null;
+                }
+            }
+
+            nullCounter = 0;
+        }
+    }
 #endregion
 
 #region Public Methods
@@ -130,6 +155,8 @@ public class Board : MonoBehaviour
              DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);   
             }
         }
+        
+        StartCoroutine(DecreaseRowCo());
     }
 
 #endregion
