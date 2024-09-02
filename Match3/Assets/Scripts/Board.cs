@@ -19,9 +19,19 @@ public class Board : MonoBehaviour
 
     public Gem[,] allGems;
 
+    public float gemSpeed;
+    
+    [HideInInspector]
+    public MatchFinder matchFind;
+    
 #endregion
 
 #region Unity Events
+
+    private void Awake()
+    {
+        matchFind = FindObjectOfType<MatchFinder>();
+    }
 
     private void Start()
     {
@@ -30,7 +40,12 @@ public class Board : MonoBehaviour
         Setup();
     }
 
-#endregion
+    private void Update()
+    {
+        matchFind.FindAllMatches();
+    }
+
+    #endregion
 
 #region Private Methods
 
@@ -46,6 +61,14 @@ public class Board : MonoBehaviour
                 bgTile.name = "BG Tile - " + i + ", " + j;
 
                 int gemToUse = Random.Range(0, gems.Length);
+
+                int iterations = 0;
+                
+                while (MatchesAt(new Vector2Int(i,j), gems[gemToUse]) && iterations < 100)
+                {
+                    gemToUse = Random.Range(0, gems.Length);
+                    iterations++;
+                }
                 
                 SpawnGem(new Vector2Int(i,j), gems[gemToUse]);
             }
@@ -59,6 +82,27 @@ public class Board : MonoBehaviour
         gem.name = "Gem - " + pos.x + ", " + pos.y;
         allGems[pos.x, pos.y] = gem;
         gem.SetupGem(pos, this);
+    }
+
+    private bool MatchesAt(Vector2Int posToCheck, Gem gemToCheck)
+    {
+        if (posToCheck.x > 1)
+        {
+            if (allGems[posToCheck.x - 1, posToCheck.y].type == gemToCheck.type && allGems[posToCheck.x - 2, posToCheck.y].type == gemToCheck.type)
+            {
+                return true;
+            }
+        }
+        
+        if (posToCheck.y > 1)
+        {
+            if (allGems[posToCheck.x, posToCheck.y - 1].type == gemToCheck.type && allGems[posToCheck.x, posToCheck.y - 2].type == gemToCheck.type)
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
 
 #endregion
