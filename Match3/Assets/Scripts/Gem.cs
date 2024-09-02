@@ -88,28 +88,24 @@ public class Gem : MonoBehaviour
 		
 		if (swipeAngle < 45 && swipeAngle > -45 && posIndex.x < board.width - 1)
 		{
-			Debug.Log("POS INDEX X = " + posIndex.x+ " Y = " + posIndex.y);
 			otherGem = board.allGems[posIndex.x + 1, posIndex.y];
 			otherGem.posIndex.x--;
 			posIndex.x++;
 		}
 		else if (swipeAngle > 45 && swipeAngle <= 135 && posIndex.y < board.height - 1)
 		{
-			Debug.Log("POS INDEX X = " + posIndex.x+ " Y = " + posIndex.y);
 			otherGem = board.allGems[posIndex.x, posIndex.y + 1];
 			otherGem.posIndex.y--;
 			posIndex.y++;
 		}
 		else if (swipeAngle < -45 && swipeAngle >= -135 && posIndex.y  > 0)
 		{
-			Debug.Log("POS INDEX X = " + posIndex.x+ " Y = " + posIndex.y);
 			otherGem = board.allGems[posIndex.x, posIndex.y - 1];
 			otherGem.posIndex.y++;
 			posIndex.y--;
 		}
 		else if(swipeAngle > 135 || swipeAngle < -135 && posIndex.x > 0)
 		{
-			Debug.Log("POS INDEX X = " + posIndex.x+ " Y = " + posIndex.y);
 			otherGem = board.allGems[posIndex.x - 1, posIndex.y];
 			otherGem.posIndex.x++;
 			posIndex.x--;

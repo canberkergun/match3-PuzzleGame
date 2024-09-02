@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -77,7 +78,7 @@ public class Board : MonoBehaviour
 
     private void SpawnGem(Vector2Int pos, Gem gemToSpawn)
     {
-        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y, 0), Quaternion.identity);
+        Gem gem = Instantiate(gemToSpawn, new Vector3(pos.x, pos.y + height, 0), Quaternion.identity);
         gem.transform.parent = transform;
         gem.name = "Gem - " + pos.x + ", " + pos.y;
         allGems[pos.x, pos.y] = gem;
@@ -141,7 +142,68 @@ public class Board : MonoBehaviour
 
             nullCounter = 0;
         }
+
+        StartCoroutine(FillBoardCo());
     }
+
+    private IEnumerator FillBoardCo()
+    {
+        yield return new WaitForSeconds(.5f);
+        
+        RefillBoard();
+
+        yield return new WaitForSeconds(.5f);
+        
+        matchFind.FindAllMatches();
+
+        if (matchFind.currentMatches.Count > 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            DestroyMatches();
+        }
+    }
+
+    private void RefillBoard()
+    {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allGems[i, j] == null)
+                {
+                    int gemToUse = Random.Range(0, gems.Length);
+                
+                    SpawnGem(new Vector2Int(i, j), gems[gemToUse]);
+                }
+            }
+        }
+        
+        CheckMisplacedGems();
+    }
+
+    private void CheckMisplacedGems()
+    {
+        List<Gem> foundGems = new List<Gem>();
+        
+        foundGems.AddRange(FindObjectsOfType<Gem>());
+        
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (foundGems.Contains(allGems[i,j]))
+                {
+                    foundGems.Remove(allGems[i, j]);
+                }
+            }
+        }
+
+        foreach (Gem g in foundGems)
+        {
+            Destroy(g.gameObject);
+        }
+    }
+    
 #endregion
 
 #region Public Methods
