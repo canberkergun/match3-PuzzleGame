@@ -29,6 +29,9 @@ public class Board : MonoBehaviour
 
     public BoardState currentState = BoardState.move;
 
+    [HideInInspector]
+    public RoundManager roundMan;
+    
         #endregion
 
     #region Unity Events
@@ -36,6 +39,7 @@ public class Board : MonoBehaviour
     private void Awake()
     {
         matchFind = FindObjectOfType<MatchFinder>();
+        roundMan = FindObjectOfType<RoundManager>();
     }
 
     private void Start()
@@ -235,6 +239,8 @@ public class Board : MonoBehaviour
         {
             if (matchFind.currentMatches[i] != null)
             {
+                ScoreCheck(matchFind.currentMatches[i]);
+                
                 DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);
             }
         }
@@ -280,6 +286,11 @@ public class Board : MonoBehaviour
 
             StartCoroutine(FillBoardCo());
         }
+    }
+
+    public void ScoreCheck(Gem gemToCheck)
+    {
+        roundMan.currentScore += gemToCheck.scoreValue;
     }
     
     #endregion

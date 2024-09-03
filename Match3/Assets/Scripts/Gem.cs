@@ -42,8 +42,10 @@ public class Gem : MonoBehaviour
 	
 	[HideInInspector]
 	public Vector2Int previousPos;
-	
-#endregion
+
+	public int scoreValue = 10;
+
+	#endregion
 
 #region Unity Events
 
@@ -75,7 +77,7 @@ public class Gem : MonoBehaviour
 #region Private Methods
 	private void OnMouseDown()
 	{
-		if (board.currentState == Board.BoardState.move)
+		if (board.currentState == Board.BoardState.move && board.roundMan.roundTime > 0)
 		{
 			firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			mousePressed = true;
