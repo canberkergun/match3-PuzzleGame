@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Gem : MonoBehaviour
@@ -55,9 +56,12 @@ public class Gem : MonoBehaviour
 		if (mousePressed && Input.GetMouseButtonUp(0))
 		{
 			mousePressed = false;
-			
-			lastTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			CalculateAngle();
+
+			if (board.currentState == Board.BoardState.move)
+			{
+				lastTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				CalculateAngle();
+			}
 		}
 	}
 
@@ -66,8 +70,11 @@ public class Gem : MonoBehaviour
 #region Private Methods
 	private void OnMouseDown()
 	{
-		firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		mousePressed = true;
+		if (board.currentState == Board.BoardState.move)
+		{
+			firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			mousePressed = true;
+		}
 	}
 
 	private void CalculateAngle()
@@ -119,6 +126,8 @@ public class Gem : MonoBehaviour
 
 	private IEnumerator CheckMoveCo()
 	{
+		board.currentState = Board.BoardState.wait;
+		
 		yield return new WaitForSeconds(.5f);
 		
 		board.matchFind.FindAllMatches();
@@ -132,6 +141,10 @@ public class Gem : MonoBehaviour
 
 				board.allGems[posIndex.x, posIndex.y] = this;
 				board.allGems[otherGem.posIndex.x, otherGem.posIndex.y] = otherGem;
+
+				yield return new WaitForSeconds(.5f);
+
+				board.currentState = Board.BoardState.move;
 			}
 			else
 			{

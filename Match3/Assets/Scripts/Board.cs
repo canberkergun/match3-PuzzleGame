@@ -8,26 +8,29 @@ using Random = UnityEngine.Random;
 
 public class Board : MonoBehaviour
 {
-    
-#region Fields
+    #region Fields
 
     public int width;
     public int height;
 
     public GameObject bgTilePrefab;
-    
+
     public Gem[] gems;
 
     public Gem[,] allGems;
 
     public float gemSpeed;
-    
-    [HideInInspector]
+
+    [HideInInspector] 
     public MatchFinder matchFind;
     
-#endregion
+    public enum BoardState { wait, move}
 
-#region Unity Events
+    public BoardState currentState = BoardState.move;
+
+        #endregion
+
+    #region Unity Events
 
     private void Awake()
     {
@@ -37,18 +40,18 @@ public class Board : MonoBehaviour
     private void Start()
     {
         allGems = new Gem[width, height];
-        
+
         Setup();
     }
 
     private void Update()
     {
-        matchFind.FindAllMatches();
+        
     }
 
     #endregion
 
-#region Private Methods
+    #region Private Methods
 
     private void Setup()
     {
@@ -64,14 +67,14 @@ public class Board : MonoBehaviour
                 int gemToUse = Random.Range(0, gems.Length);
 
                 int iterations = 0;
-                
-                while (MatchesAt(new Vector2Int(i,j), gems[gemToUse]) && iterations < 100)
+
+                while (MatchesAt(new Vector2Int(i, j), gems[gemToUse]) && iterations < 100)
                 {
                     gemToUse = Random.Range(0, gems.Length);
                     iterations++;
                 }
-                
-                SpawnGem(new Vector2Int(i,j), gems[gemToUse]);
+
+                SpawnGem(new Vector2Int(i, j), gems[gemToUse]);
             }
         }
     }
@@ -89,20 +92,22 @@ public class Board : MonoBehaviour
     {
         if (posToCheck.x > 1)
         {
-            if (allGems[posToCheck.x - 1, posToCheck.y].type == gemToCheck.type && allGems[posToCheck.x - 2, posToCheck.y].type == gemToCheck.type)
+            if (allGems[posToCheck.x - 1, posToCheck.y].type == gemToCheck.type &&
+                allGems[posToCheck.x - 2, posToCheck.y].type == gemToCheck.type)
             {
                 return true;
             }
         }
-        
+
         if (posToCheck.y > 1)
         {
-            if (allGems[posToCheck.x, posToCheck.y - 1].type == gemToCheck.type && allGems[posToCheck.x, posToCheck.y - 2].type == gemToCheck.type)
+            if (allGems[posToCheck.x, posToCheck.y - 1].type == gemToCheck.type &&
+                allGems[posToCheck.x, posToCheck.y - 2].type == gemToCheck.type)
             {
                 return true;
             }
         }
-        
+
         return false;
     }
 
@@ -123,16 +128,16 @@ public class Board : MonoBehaviour
         yield return new WaitForSeconds(.2f);
 
         int nullCounter = 0;
-        
+
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
-                if (allGems[i,j] == null)
+                if (allGems[i, j] == null)
                 {
                     nullCounter++;
                 }
-                else if(nullCounter > 0)
+                else if (nullCounter > 0)
                 {
                     allGems[i, j].posIndex.y -= nullCounter;
                     allGems[i, j - nullCounter] = allGems[i, j];
@@ -149,17 +154,22 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
         yield return new WaitForSeconds(.5f);
-        
+
         RefillBoard();
 
         yield return new WaitForSeconds(.5f);
-        
+
         matchFind.FindAllMatches();
 
         if (matchFind.currentMatches.Count > 0)
         {
             yield return new WaitForSeconds(1.5f);
             DestroyMatches();
+        }
+        else
+        {
+            yield return new WaitForSeconds(.5f);
+            currentState = BoardState.move;
         }
     }
 
@@ -172,26 +182,26 @@ public class Board : MonoBehaviour
                 if (allGems[i, j] == null)
                 {
                     int gemToUse = Random.Range(0, gems.Length);
-                
+
                     SpawnGem(new Vector2Int(i, j), gems[gemToUse]);
                 }
             }
         }
-        
+
         CheckMisplacedGems();
     }
 
     private void CheckMisplacedGems()
     {
         List<Gem> foundGems = new List<Gem>();
-        
+
         foundGems.AddRange(FindObjectsOfType<Gem>());
-        
+
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
-                if (foundGems.Contains(allGems[i,j]))
+                if (foundGems.Contains(allGems[i, j]))
                 {
                     foundGems.Remove(allGems[i, j]);
                 }
@@ -203,10 +213,10 @@ public class Board : MonoBehaviour
             Destroy(g.gameObject);
         }
     }
-    
-#endregion
 
-#region Public Methods
+    #endregion
+
+    #region Public Methods
 
     public void DestroyMatches()
     {
@@ -214,12 +224,12 @@ public class Board : MonoBehaviour
         {
             if (matchFind.currentMatches[i] != null)
             {
-             DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);   
+                DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);
             }
         }
-        
+
         StartCoroutine(DecreaseRowCo());
     }
 
-#endregion
+    #endregion
 }
