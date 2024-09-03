@@ -83,6 +83,83 @@ public class MatchFinder : MonoBehaviour
         {
             currentMatches = currentMatches.Distinct().ToList();
         }
+        
+        CheckForBombs();
+    }
+
+    public void CheckForBombs()
+    {
+        for (int i = 0; i < currentMatches.Count; i++)
+        {
+            Gem gem = currentMatches[i];
+
+            int x = gem.posIndex.x;
+            int y = gem.posIndex.y;
+
+            if (gem.posIndex.x > 0)
+            {
+                if (board.allGems[x - 1, y] != null)
+                {
+                    if (board.allGems[x - 1, y].type == Gem.GemType.bomb)
+                    {
+                        MarkBombArea(new Vector2Int(x - 1, y), board.allGems[x - 1, y]);
+                    }
+                }
+            }
+            
+            if (gem.posIndex.x < board.width - 1)
+            {
+                if (board.allGems[x + 1, y] != null)
+                {
+                    if (board.allGems[x + 1, y].type == Gem.GemType.bomb)
+                    {
+                        MarkBombArea(new Vector2Int(x + 1, y), board.allGems[x + 1, y]);
+                    }
+                }
+            }
+            
+            if (gem.posIndex.y > 0)
+            {
+                if (board.allGems[x, y - 1] != null)
+                {
+                    if (board.allGems[x, y - 1].type == Gem.GemType.bomb)
+                    {
+                        MarkBombArea(new Vector2Int(x, y - 1), board.allGems[x, y - 1]);
+                    }
+                }
+            }
+            
+            if (gem.posIndex.y < board.height - 1)
+            {
+                if (board.allGems[x, y + 1] != null)
+                {
+                    if (board.allGems[x, y + 1].type == Gem.GemType.bomb)
+                    {
+                        MarkBombArea(new Vector2Int(x, y + 1), board.allGems[x, y + 1]);
+                    }
+                }
+            }
+        }
+    }
+
+    public void MarkBombArea(Vector2Int bombPos, Gem theBomb)
+    {
+        for (int i = bombPos.x - theBomb.blastSize; i <= bombPos.x + theBomb.blastSize; i++)
+        {
+            for (int j = bombPos.y - theBomb.blastSize; j <= bombPos.y + theBomb.blastSize; j++)
+            {
+                if (i >= 0 && i < board.width && j >= 0 && j < board.height)
+                {
+                    if (board.allGems[i, j] != null)
+                    {
+                        board.allGems[i, j].isMatched = true;
+                        currentMatches.Add(board.allGems[i, j]);
+                    }
+                }
+            }
+        }
+
+        currentMatches = currentMatches.Distinct().ToList();
     }
 
 #endregion

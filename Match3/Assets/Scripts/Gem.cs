@@ -15,7 +15,8 @@ public class Gem : MonoBehaviour
 		green,
 		red,
 		yellow,
-		purple
+		purple,
+		bomb
 	}
 
 	public GemType type;
@@ -34,6 +35,10 @@ public class Gem : MonoBehaviour
 	private float swipeAngle = 0;
 
 	private Gem otherGem;
+	
+	public GameObject destroyEffect;
+
+	public int blastSize = 2;
 	
 	[HideInInspector]
 	public Vector2Int previousPos;

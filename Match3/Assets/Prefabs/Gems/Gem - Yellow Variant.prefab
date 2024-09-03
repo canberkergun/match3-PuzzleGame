@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1241191153691759914, guid: 08be485cedf48c94bafcedf8f500f6e2, type: 3}
+      propertyPath: destroyEffect
+      value: 
+      objectReference: {fileID: 1145597236796075586, guid: 57a0c43b4f0e2e74695e2448a08f6c82, type: 3}
     - target: {fileID: 6872969609934052349, guid: 08be485cedf48c94bafcedf8f500f6e2, type: 3}
       propertyPath: m_Name
       value: Gem - Yellow Variant

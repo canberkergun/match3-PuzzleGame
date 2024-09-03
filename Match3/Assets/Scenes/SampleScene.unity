@@ -298,7 +298,10 @@ MonoBehaviour:
   - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
   - {fileID: 8925531174850854243, guid: a1e5913ed3d30dc46b75c05d1668db88, type: 3}
   gemSpeed: 7
+  bomb: {fileID: 1491155984480218127, guid: 993e82cab3cf4c14a888b70bbfa11469, type: 3}
+  bombChance: 2
   matchFind: {fileID: 0}
+  currentState: 1
 --- !u!4 &2126623104
 Transform:
   m_ObjectHideFlags: 0
