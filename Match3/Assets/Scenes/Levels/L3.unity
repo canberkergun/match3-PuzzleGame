@@ -725,17 +725,17 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   - gemsInRow:
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
+    - {fileID: 1241191153691759914, guid: 08be485cedf48c94bafcedf8f500f6e2, type: 3}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
   - gemsInRow:
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
+    - {fileID: 6157865993600522399, guid: 258a316e92642f94eb957d1a4bde1356, type: 3}
 --- !u!1001 &2660933058603980997
 PrefabInstance:
   m_ObjectHideFlags: 0
