@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="43b40936-820b-4247-86ad-57b3e3535f15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Match3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Match3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelSelect.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelSelect.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/L1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/L1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/L2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/L2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/L3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/L3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Gem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Gem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MatchFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MatchFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/RoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/RoundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +83,8 @@
       <workItem from="1725893672887" duration="1137000" />
       <workItem from="1726481151850" duration="1963000" />
       <workItem from="1726494946923" duration="2176000" />
-      <workItem from="1727262904751" duration="304000" />
+      <workItem from="1727262904751" duration="897000" />
+      <workItem from="1727345345476" duration="2517000" />
     </task>
     <servers />
   </component>
