@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6d207a5c-4a51-4d26-85f3-a3975cb81eec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gem_Shard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gem_Shard.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/bg_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/bg_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/extra.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/extra/mg_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/extra/mg_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/extra/sg_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/extra/sg_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/gg_08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/gg_08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/pg_09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/pg_09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/rg_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/rg_28.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/yg_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/Gems/yg_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Block_BG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Block_BG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Gradient_BG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Gradient_BG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/Star.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_button01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_button01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_button02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_button02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/blue_handle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_button01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_button01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_button02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_button02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/green_handle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/grey_box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/grey_box.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_button01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_button01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_button02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_button02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/red_handle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_button01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_button01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_button02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_button02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/UI/yellow_handle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/bomb100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/bomb100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/dg_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Art/dg_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level Select.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level Select.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level-1.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level-1.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level-2.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Level-2.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Main Menu.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/Music/Main Menu.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/explosion.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/explosion.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/gem break.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/gem break.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/level complete.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/level complete.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/stone break.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Audio/SFX/stone break.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Gem Particle 5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Shard_Particle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Udemy Match3 Assets/Materials/Shard_Particle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2qwco6EjnsKjqf2ergz4QUI3IAH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6d207a5c-4a51-4d26-85f3-a3975cb81eec" name="Changes" comment="" />
+      <created>1735577250854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735577250854</updated>
+      <workItem from="1735577252461" duration="632000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityProjectDiscoverer">
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
