@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -34,6 +35,9 @@ public class Board : MonoBehaviour
     
     private float bonusMulti;
     public float bonusAmount = .5f;
+
+    private BoardLayout boardLayout;
+    private Gem[,] layoutStore;
     
     #endregion
 
@@ -43,12 +47,15 @@ public class Board : MonoBehaviour
     {
         matchFind = FindObjectOfType<MatchFinder>();
         roundMan = FindObjectOfType<RoundManager>();
+        boardLayout = GetComponent<BoardLayout>();
     }
 
     private void Start()
     {
         allGems = new Gem[width, height];
 
+        layoutStore = new Gem[width, height];
+        
         Setup();
     }
 
@@ -66,6 +73,11 @@ public class Board : MonoBehaviour
 
     private void Setup()
     {
+        if (boardLayout != null)
+        {
+            layoutStore = boardLayout.GetLayout();
+        }
+        
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
@@ -75,17 +87,24 @@ public class Board : MonoBehaviour
                 bgTile.transform.parent = transform;
                 bgTile.name = "BG Tile - " + i + ", " + j;
 
-                int gemToUse = Random.Range(0, gems.Length);
-
-                int iterations = 0;
-
-                while (MatchesAt(new Vector2Int(i, j), gems[gemToUse]) && iterations < 100)
+                if (layoutStore[i, j] != null)
                 {
-                    gemToUse = Random.Range(0, gems.Length);
-                    iterations++;
+                    SpawnGem(new Vector2Int(i,j), layoutStore[i, j]);
                 }
+                else
+                {
+                    int gemToUse = Random.Range(0, gems.Length);
 
-                SpawnGem(new Vector2Int(i, j), gems[gemToUse]);
+                    int iterations = 0;
+
+                    while (MatchesAt(new Vector2Int(i, j), gems[gemToUse]) && iterations < 100)
+                    {
+                        gemToUse = Random.Range(0, gems.Length);
+                        iterations++;
+                    }
+
+                    SpawnGem(new Vector2Int(i, j), gems[gemToUse]);
+                }
             }
         }
     }
@@ -133,6 +152,19 @@ public class Board : MonoBehaviour
         {
             if (allGems[pos.x, pos.y].isMatched)
             {
+                if (allGems[pos.x, pos.y].type == Gem.GemType.bomb)
+                {
+                    SFXManager.instance.PlayExplode();
+                }
+                else if (allGems[pos.x, pos.y].type == Gem.GemType.stone)
+                {
+                    SFXManager.instance.PlayStoneBreak();
+                }
+                else
+                {
+                    SFXManager.instance.PlayGemBreak();
+                }
+                
                 Instantiate(allGems[pos.x, pos.y].destroyEffect, new Vector2(pos.x, pos.y), Quaternion.identity);
                 
                 Destroy(allGems[pos.x, pos.y].gameObject);
